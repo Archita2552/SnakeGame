@@ -24,6 +24,12 @@ class Snake:
             self.segment[seg_num].goto(new_x, new_y)
         self.segment[0].forward(MOVE_DISTANCE)
 
+    def reset(self):
+        for seg in self.segment:
+            seg.goto(1000,1000)
+        self.segment.clear()
+        self.create_snake()
+
 
     def add_segment(self,position):
         snake = Turtle(shape="square")
